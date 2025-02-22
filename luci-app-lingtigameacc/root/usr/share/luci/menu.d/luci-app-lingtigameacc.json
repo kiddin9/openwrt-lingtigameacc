@@ -3,29 +3,12 @@
 		"title": "LingTi Game Acc",
 		"order": 30,
 		"action": {
-			"type": "firstchild"
+			"type": "view",
+			"path": "lingtigameacc/lingtigameacc"
 		},
 		"depends": {
 			"acl": [ "luci-app-lingtigameacc" ],
 			"uci": { "lingtigameacc": true }
-		}
-	},
-
-	"admin/services/lingtigameacc/config": {
-		"title": "Configuration",
-		"order": 10,
-		"action": {
-			"type": "view",
-			"path": "lingtigameacc/config"
-		}
-	},
-
-	"admin/services/lingtigameacc/log": {
-		"title": "Log",
-		"order": 30,
-		"action": {
-			"type": "view",
-			"path": "lingtigameacc/log"
 		}
 	}
 }

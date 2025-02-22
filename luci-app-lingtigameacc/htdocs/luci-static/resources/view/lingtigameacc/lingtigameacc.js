@@ -19,7 +19,7 @@ function getServiceStatus() {
 	return L.resolveDefault(callServiceList('lingtigameacc'), {}).then(function (res) {
 		var isRunning = false;
 		try {
-			isRunning = res['lingtigameacc']['instances']['instance1']['running'];
+			isRunning = res['lingtigameacc']['instances']['lingtigameacc']['running'];
 		} catch (e) { }
 		return isRunning;
 	});
@@ -65,7 +65,7 @@ return view.extend({
 			]);
 		}
 
-		s = m.section(form.NamedSection, 'config', 'subconverter');
+		s = m.section(form.NamedSection, 'config', 'lingtigameacc');
 
 		o = s.option(form.Flag, 'enabled', _('Enable'));
 		o.default = o.disabled;
@@ -74,7 +74,8 @@ return view.extend({
 		o = s.option(form.DummyValue, '_image');
         o.renderWidget = function() {
             return E('img', {
-                src: '/luci-static/lingtigameacc/router-steps.png'
+                src: '/luci-static/lingtigameacc/router-steps.png',
+                style: 'max-width: 100%'
             });
         };
 
